@@ -2,10 +2,13 @@
 Onde está o fluxo?
 
 - [Documentação](./DOCUMENTATION.md)
-- [Regras](./README.md)
+- [Regras](./REGRAS.md)
+- [MVP](./MVP.md)
 - [Estrutura](./STRUCTBACK.md)
 - [Usabilidade](./USABILIDADE.md)
 - [Codes](./CODES.md)
+- [Custos](./CUSTOS.md)
+
 
 
 ### **1. Tela de Login / Cadastro**
