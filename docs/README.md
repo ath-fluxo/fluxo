@@ -19,14 +19,14 @@ Fluxo é uma plataforma social geolocalizada que conecta pessoas a eventos públ
 
 ## 📄 Documentação
 
-- [📘 Documentação Navegável (index.md)](../fluxo_docs_finais_markdown/docs/index.md)
-- [DOCUMENTATION.md](../fluxo_docs_finais_markdown/DOCUMENTATION.md)
-- [REGRAS.md](../fluxo_docs_finais_markdown/REGRAS.md)
-- [STRUCTBACK.md](../fluxo_docs_finais_markdown/STRUCTBACK.md)
-- [USABILIDADE.md](../fluxo_docs_finais_markdown/USABILIDADE.md)
-- [CODES.md](../fluxo_docs_finais_markdown/CODES.md)
-- [MVP.md](../fluxo_docs_finais_markdown/MVP.md)
-- [plano_orcamento_mvp_fluxo.md](../fluxo_docs_finais_markdown/plano_orcamento_mvp_fluxo.md)
+- [📘 Documentação Navegável (index.md)](../index.md)
+- [DOCUMENTATION.md](./DOCUMENTATION.md)
+- [REGRAS.md](./REGRAS.md)
+- [STRUCTBACK.md](./INFRA.md)
+- [USABILIDADE.md](./USABILIDADE.md)
+- [CODES.md](./CODES.md)
+- [MVP.md](./MVP.md)
+- [plano_orcamento_mvp_fluxo.md](./CUSTOS.md)
 
 ---
 
