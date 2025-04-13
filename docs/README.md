@@ -19,7 +19,7 @@ Fluxo é uma plataforma social geolocalizada que conecta pessoas a eventos públ
 
 ## 📄 Documentação
 
-- [📘 Documentação Navegável (index.md)](../index.md)
+- [📘 Documentação Navegável (index.md)](./index.md)
 - [DOCUMENTATION.md](./DOCUMENTATION.md)
 - [REGRAS.md](./REGRAS.md)
 - [STRUCTBACK.md](./INFRA.md)

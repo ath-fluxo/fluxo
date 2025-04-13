@@ -7,14 +7,14 @@ Bem-vindo à central de documentação do **Fluxo**, o aplicativo de eventos com
 
 ## 🧭 Comece por aqui
 
-- [Resumo e Interface (README)](./docs/README.md)
-- [Visão Técnica Geral (DOCUMENTATION)](./docs/DOCUMENTATION.md)
-- [Regras e Estratégia (REGRAS)](./docs/REGRAS.md)
-- [Estrutura do Backend (.NET) (STRUCTBACK)](./docs/INFRA.md)
-- [Funcionalidades e Modelos de Dados (CODES)](./docs/CODES.md)
-- [Design, Usabilidade e UI (USABILIDADE)](./docs/USABILIDADE.md)
-- [Roadmap e MVP (MVP)](./docs/MVP.md)
-- [Plano de Orçamento (plano_orcamento_mvp_fluxo)](./docs/CUSTOS.md)
+- [Resumo e Interface (README)](./README.md)
+- [Visão Técnica Geral (DOCUMENTATION)](./DOCUMENTATION.md)
+- [Regras e Estratégia (REGRAS)](./REGRAS.md)
+- [Estrutura do Backend (.NET) (STRUCTBACK)](./INFRA.md)
+- [Funcionalidades e Modelos de Dados (CODES)](./CODES.md)
+- [Design, Usabilidade e UI (USABILIDADE)](./USABILIDADE.md)
+- [Roadmap e MVP (MVP)](./MVP.md)
+- [Plano de Orçamento (plano_orcamento_mvp_fluxo)](./CUSTOS.md)
 
 ---
 
