@@ -1,28 +1,29 @@
-### Documentação Completa do Projeto "Fluxo"
+# Estratégia do Projeto "Fluxo"
 
 ## Sumário
-- [Sumário](#sumário)
-- [Introdução](#introdução)
-- [Arquitetura do Sistema](#arquitetura-do-sistema)
-  - [Componentes Principais](#componentes-principais)
-  - [Diagrama de Arquitetura](#diagrama-de-arquitetura)
-- [Modelos de Dados](#modelos-de-dados)
-  - [Classe `User`](#classe-user)
-  - [Classe `Event`](#classe-event)
-  - [Classe `Comment`](#classe-comment)
-- [Interface Gráfica (UI/UX)](#interface-gráfica-uiux)
-  - [Telas Principais](#telas-principais)
-- [Tecnologias e Ferramentas](#tecnologias-e-ferramentas)
-  - [Frontend (Flutter)](#frontend-flutter)
-  - [Backend (.NET 9)](#backend-net-9)
-  - [Ferramentas Gratuitas](#ferramentas-gratuitas)
-- [Guia de Instalação e Configuração](#guia-de-instalação-e-configuração)
-  - [Frontend (Flutter)](#frontend-flutter-1)
-  - [Backend (.NET 9)](#backend-net-9-1)
-- [Estratégia de Testes](#estratégia-de-testes)
-- [Plano de Deploy](#plano-de-deploy)
-- [Futuras Melhorias](#futuras-melhorias)
-- [Conclusão](#conclusão)
+- [Estratégia do Projeto "Fluxo"](#estratégia-do-projeto-fluxo)
+  - [Sumário](#sumário)
+  - [Introdução](#introdução)
+  - [Arquitetura do Sistema](#arquitetura-do-sistema)
+    - [Componentes Principais](#componentes-principais)
+    - [Diagrama de Arquitetura](#diagrama-de-arquitetura)
+  - [Modelos de Dados](#modelos-de-dados)
+    - [Classe `User`](#classe-user)
+    - [Classe `Event`](#classe-event)
+    - [Classe `Comment`](#classe-comment)
+  - [Interface Gráfica (UI/UX)](#interface-gráfica-uiux)
+    - [Telas Principais](#telas-principais)
+  - [Tecnologias e Ferramentas](#tecnologias-e-ferramentas)
+    - [Frontend (React Native)](#frontend-react-native)
+    - [Backend (.NET 9)](#backend-net-9)
+    - [Ferramentas Gratuitas](#ferramentas-gratuitas)
+  - [Guia de Instalação e Configuração](#guia-de-instalação-e-configuração)
+    - [Frontend (React Native)](#frontend-react-native-1)
+    - [Backend (.NET 9)](#backend-net-9-1)
+  - [Estratégia de Testes](#estratégia-de-testes)
+  - [Plano de Deploy](#plano-de-deploy)
+  - [Futuras Melhorias](#futuras-melhorias)
+  - [Conclusão](#conclusão)
 
 ---
 
@@ -31,7 +32,7 @@ O aplicativo "Fluxo" é um MVP (Produto Mínimo Viável) de uma rede social desc
 
 ## Arquitetura do Sistema
 ### Componentes Principais
-- **Frontend**: Interface do usuário (Flutter)
+- **Frontend**: Interface do usuário (React Native)
 - **Backend**: API RESTful (.NET 9)
 - **Blockchain**: Autenticação via carteiras (MetaMask, Argent)
 - **Armazenamento**: IPFS (InterPlanetary File System)
@@ -40,7 +41,7 @@ O aplicativo "Fluxo" é um MVP (Produto Mínimo Viável) de uma rede social desc
 ```plaintext
 +------------------+      +------------------+      +------------------+
 |   Frontend       |      |   Backend        |      |   Blockchain     |
-| (Flutter)        |      | (.NET 9)         |      | (Carteiras)      |
+| (React Native)        |      | (.NET 9)         |      | (Carteiras)      |
 +------------------+      +------------------+      +------------------+
         |                           |                           |
         |                           |                           |
@@ -120,10 +121,10 @@ public class Comment
 ---
 
 ## Tecnologias e Ferramentas
-### Frontend (Flutter)
-- **Mapa**: `flutter_mapbox` (integração com Mapbox)
-- **Blockchain**: `web3dart` (interação com carteiras)
-- **Estado**: `provider` (gerenciamento de estado)
+### Frontend (React Native)
+- **Mapa**: `react-native-mapbox-gl` (integração com Mapbox)
+- **Blockchain**: `ethers.js (com WalletConnect)` (interação com carteiras)
+- **Estado**: `Zustand ou Context API` (gerenciamento de estado)
 
 ### Backend (.NET 9)
 - **API RESTful**: `Microsoft.AspNetCore.Mvc`
@@ -138,15 +139,15 @@ public class Comment
 ---
 
 ## Guia de Instalação e Configuração
-### Frontend (Flutter)
-1. Instale o Flutter: [flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
+### Frontend (React Native)
+1. Instale o React Native: [https://reactnative.dev/docs/environment-setup](https://https://reactnative.dev/docs/environment-setup)
 2. Clone o repositório:
    ```bash
    git clone https://github.com/fluxo-mvp/frontend.git
    ```
 3. Instale dependências:
    ```bash
-   flutter pub get
+   flutter npm install
    ```
 4. Configure arquivo `config.json` com chaves da Mapbox e IPFS.
 
@@ -166,7 +167,7 @@ public class Comment
 
 ## Estratégia de Testes
 - **Testes Unitários**: Backend (.NET) com `xUnit`
-- **Testes de Integração**: Frontend (Flutter) com `flutter_test`
+- **Testes de Integração**: Frontend (React Native) com `React Native Testing Library`
 - **Testes de Usabilidade**: Feedback de usuários beta
 
 ---
@@ -187,3 +188,4 @@ public class Comment
 
 ## Conclusão
 O projeto "Fluxo" oferece uma solução descentralizada para gerenciamento de eventos, priorizando privacidade e segurança. Esta documentação serve como base para desenvolver o MVP usando ferramentas gratuitas e open-source.
+```

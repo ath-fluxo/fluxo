@@ -339,7 +339,7 @@ fluxo-mvp/
 A arquitetura do "Fluxo" é baseada em uma abordagem federada e descentralizada, utilizando blockchain para gerenciar identidades de usuário e garantir privacidade. O sistema é dividido em dois componentes principais: frontend e backend[^16^].
 
 ##### **2.2 Frontend**
-- **Tecnologia**: Flutter para desenvolvimento cross-platform (web e mobile).
+- **Tecnologia**: React Native para desenvolvimento cross-platform (web e mobile).
 - **Responsabilidade**: Interface do usuário, interação com carteiras de usuário (ex: MetaMask) e comunicação com o backend.
 
 ##### **2.3 Backend**
@@ -418,8 +418,8 @@ public class Comment
 
 #### **5. Pacotes e Dependências**
 
-##### **5.1 Frontend (Flutter)**
-- **Flutter SDK**: Versão 3.10 ou superior.
+##### **5.1 Frontend (React Native)**
+- **React Native SDK**: Versão 3.10 ou superior.
 - **Dependências**:
   - `flutter_mapbox`: Para integração com mapas.
   - `web3dart`: Para interação com carteiras e blockchain[^14^].

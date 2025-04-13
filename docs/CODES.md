@@ -8,7 +8,7 @@ Primeiro, vamos listar as principais funcionalidades que o aplicativo deve ter:
 - **Gerenciamento de Eventos Privados**: Convidar pessoas pela lista de amigos ou link de convite.
 - **Eventos Públicos**: Visíveis para todos os usuários.
 - **Comentários e Postagens**: Funcionalidades de interação social.
-- **Versão Web para Testes**: Inicialmente, focar na versão web usando Flutter.
+- **Versão Web para Testes**: Inicialmente, focar na versão web usando React Native.
 
 ### 2. **Arquitetura UML**
 Para começar a desenhar a arquitetura UML, podemos criar diagramas de classes e casos de uso. Aqui estão algumas sugestões:
@@ -30,7 +30,7 @@ Para começar a desenhar a arquitetura UML, podemos criar diagramas de classes e
 - **Classe Comentário**: ID, Autor, Conteúdo, Data/Hora
 
 ### 3. **Tela de Mapa (Mapbox)**
-- **Flutter Mapbox Integration**: Você pode usar o pacote `flutter_mapbox` para integrar o mapa na aplicação Flutter.
+- **React Native Mapbox Integration**: Você pode usar o pacote `react-native-mapbox-gl` para integrar o mapa na aplicação React Native.
 - **Exibir Marcadores**: Cada evento pode ser representado por um marcador no mapa.
 - **Informações ao Clicar**: Ao clicar em um marcador, exibir detalhes do evento.
 
@@ -39,10 +39,10 @@ Para começar a desenhar a arquitetura UML, podemos criar diagramas de classes e
 - **Detalhes do Evento**: Nome, descrição, localização, comentários, opção para participar ou convidar amigos.
 - **Comentários**: Usuários podem comentar e ver comentários de outros.
 
-### 5. **Implementação Inicial com Flutter**
+### 5. **Implementação Inicial com React Native**
 #### **Passos Iniciais**
-1. **Configurar Projeto Flutter**: Inicializar um projeto Flutter e configurar o ambiente de desenvolvimento.
-2. **Integrar Mapbox**: Adicionar o pacote `flutter_mapbox` e configurar a chave de API.
+1. **Configurar Projeto React Native**: Inicializar um projeto React Native e configurar o ambiente de desenvolvimento.
+2. **Integrar Mapbox**: Adicionar o pacote `react-native-mapbox-gl` e configurar a chave de API.
 3. **Criar Modelos de Dados**: Definir classes para Usuário, Evento e Comentário.
 4. **Desenvolver Tela de Mapa**: Implementar a tela inicial com o mapa e marcadores.
 5. **Desenvolver Tela de Eventos**: Criar a tela que lista eventos e mostra detalhes.
@@ -50,18 +50,18 @@ Para começar a desenhar a arquitetura UML, podemos criar diagramas de classes e
 #### **Exemplo de Estrutura de Arquivos**
 ```
 lib/
-├── main.dart
+├── App.tsx
 ├── screens/
-│   ├── map_screen.dart
-│   ├── event_screen.dart
-│   ├── event_details_screen.dart
+│   ├── map_screen.tsx
+│   ├── event_screen.tsx
+│   ├── event_details_screen.tsx
 ├── models/
-│   ├── user.dart
-│   ├── event.dart
-│   ├── comment.dart
+│   ├── user.tsx
+│   ├── event.tsx
+│   ├── comment.tsx
 ├── services/
-│   ├── mapbox_service.dart
-│   ├── event_service.dart
+│   ├── mapbox_service.tsx
+│   ├── event_service.tsx
 ```
 
 ### 6. **Regras de Negócio**

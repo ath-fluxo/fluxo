@@ -111,9 +111,9 @@
 
 ### **6. Plano de Implementação com Ferramentas Gratuitas**
 
-1. **Frontend (Flutter)**:
-   - Use `flutter_mapbox` para integração com mapas.
-   - Use `web3dart` para interação com carteiras blockchain.
+1. **Frontend (React Native)**:
+   - Use `react-native-mapbox-gl` para integração com mapas.
+   - Use `ethers.js (com WalletConnect)` para interação com carteiras blockchain.
 
 2. **Backend (.NET 9)**:
    - Use `Entity Framework Core` para modelo de dados.

@@ -1,13 +1,13 @@
 # FLUXO
 Onde está o fluxo?
 
-- [Documentação](./DOCUMENTATION.md)
-- [Regras](./REGRAS.md)
-- [MVP](./MVP.md)
-- [Estrutura](./STRUCTBACK.md)
-- [Usabilidade](./USABILIDADE.md)
-- [Codes](./CODES.md)
-- [Custos](./CUSTOS.md)
+- [Documentação](./docs/DOCUMENTATION.md)
+- [Regras](./docs/REGRAS.md)
+- [MVP](./docs/MVP.md)
+- [Estrutura](./docs/INFRA.md)
+- [Usabilidade](./docs/USABILIDADE.md)
+- [Codes](./docs/CODES.md)
+- [Custos](./docs/CUSTOS.md)
 
 
 
