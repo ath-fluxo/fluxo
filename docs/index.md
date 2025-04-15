@@ -16,7 +16,10 @@ Bem-vindo à central de documentação do **Fluxo**, o aplicativo de eventos com
 - [Design, Usabilidade e UI (USABILIDADE)](./USABILIDADE.md)
 - [Roadmap e MVP (MVP)](./MVP.md)
 - [Plano de Orçamento (CUSTOS)](./CUSTOS.md)
+- [Levantamento Orçamentário (ORÇAMENTÁRIO)](./ORÇAMENTÁRIO.md)
 - [Funcionalidades e ideias (FEATURES)](./FEATURES.md)
+- [Roadmap Técnico (ROADMAP)](./ROADMAP.md)
+
 
 ---
 
