@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist && firebase deploy --only hosting",
+    "deploy:gh": "gh-pages -d dist",
+    "deploy:firebase": "firebase deploy --only hosting",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint:fix": "eslint . --fix",
@@ -16,7 +18,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "homepage": "https://amoreirat.github.io/fluxo/",
+  "homepage": "https://fluxo-docs.web.app/",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.4",
     "@tailwindcss/vite": "^4.1.4",
