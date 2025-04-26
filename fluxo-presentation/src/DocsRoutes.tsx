@@ -19,6 +19,7 @@ import ORCAMENTARIO from './../../docs/ORÇAMENTÁRIO.md';
 import REGRAS from './../../docs/REGRAS.md';
 import ROADMAP from './../../docs/ROADMAP.md';
 import USABILIDADE from './../../docs/USABILIDADE.md';
+import { DocsLayout } from './DocsLayout';
 
 interface DocEntry {
     path: string;
@@ -42,7 +43,9 @@ const docs: DocEntry[] = [
 
 // Componente genérico para renderizar markdown dentro do estilo neomórfico
 const MarkdownPage: React.FC<{ title: string; content: string }> = ({ title, content }) => (
+        <DocsLayout>
     <ContainerNeomorphic>
+
         <NeomorphicCard>
             <h1 className="text-2xl font-semibold mb-4">{title}</h1>
             <ReactMarkdown>{content}</ReactMarkdown>
@@ -53,6 +56,7 @@ const MarkdownPage: React.FC<{ title: string; content: string }> = ({ title, con
             </div>
         </NeomorphicCard>
     </ContainerNeomorphic>
+        </DocsLayout>
 );
 
 // Página de Sumário com links para cada seção

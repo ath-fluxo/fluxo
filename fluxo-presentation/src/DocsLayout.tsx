@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
     ContainerNeomorphic,
     NeomorphicButton
@@ -15,7 +15,7 @@ export const DocsLayout: React.FC<{ children: React.ReactNode }> = ({ children }
     React.useEffect(() => {
         document.documentElement.classList.toggle('dark', theme === 'dark');
     }, [theme]);
-    const { pathname } = useLocation();
+    // const { pathname } = useLocation();
 
     // Lista de rotas para navegação
     const navItems = [
@@ -51,7 +51,7 @@ export const DocsLayout: React.FC<{ children: React.ReactNode }> = ({ children }
                                 <Link key={path} to={path}>
                                     <NeomorphicButton
                                         label={label}
-                                        className={pathname === path ? 'bg-blue-400 dark:bg-blue-600' : ''}
+                                        className={ 'bg-blue-400 dark:bg-blue-600'}
                                     />
                                 </Link>
                             ))}

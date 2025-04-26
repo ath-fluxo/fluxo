@@ -1,13 +1,33 @@
-import tailwindcss from '@tailwindcss/vite'
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-import vitePluginString from 'vite-plugin-string'
-
+import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+import vitePluginString from 'vite-plugin-string';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    // Vite plugin to handle .md files
+    {
+      name: 'vite-plugin-md',
+      transform(code, id) {
+        if (id.endsWith('.md')) {
+          return {
+            code: `export default ${JSON.stringify(code)}`,
+            map: null,
+          }
+        }
+      },
+    },
+    // Vite plugin to handle .md files as strings
+    {
+      name: 'markdown-loader',
+      transform(code, id) {
+        if (id.slice(-3) === '.md') {
+          return `export default ${JSON.stringify(code)};`;
+        }
+      },
+    },
     vitePluginString({
       include: '**/*.md',
       exclude: ['**/node_modules/**'],
@@ -31,6 +51,13 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
+      '@components': '/src/components',
+      '@hooks': '/src/hooks',
+      '@context': '/src/context',
+      '@styles': '/src/styles',
+      '@utils': '/src/utils',
+      '@assets': '/src/assets',
+      '@docs': './../docs',
     },
   },
   css: {
