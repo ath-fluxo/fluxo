@@ -1,16 +1,13 @@
 import React from "react";
-import {
-  ContainerNeomorphic,
-  NeomorphicCard,
-  NeomorphicSection
-} from "../../components/NeomorphicComponents";
+import { Card, H2 } from "../../components/NeoUI";
 
 const DocumentationMd: React.FC = () => (
-  <ContainerNeomorphic>
+  <div>
    
-    <NeomorphicSection className="max-w-3xl mx-auto mb-2">
-      <h3 className="text-3xl font-bold text-primary mb-2">Documentação Completa do Projeto "Fluxo"</h3>
-      <NeomorphicCard className="mb-4">
+    <Card
+    >
+      <H2 >Documentação Completa do Projeto "Fluxo"</H2>
+      <div className="mb-4">
         <h2 id="sumário" className="text-xl font-semibold text-highlight mb-2">Sumário</h2>
         <ul className="list-disc pl-6 text-gray-700 dark:text-gray-200">
           <li><a href="#sumário" className="text-primary hover:underline">Sumário</a></li>
@@ -51,18 +48,18 @@ const DocumentationMd: React.FC = () => (
           <li><a href="#futuras-melhorias" className="text-primary hover:underline">Futuras Melhorias</a></li>
           <li><a href="#conclusão" className="text-primary hover:underline">Conclusão</a></li>
         </ul>
-      </NeomorphicCard>
-    </NeomorphicSection>
+      </div>
+    </Card>
 
-    <NeomorphicSection className="max-w-3xl mx-auto">
-      <NeomorphicCard className="mb-6">
+    <div>
+      <Card >
         <h2 id="introdução" className="text-2xl font-semibold text-primary mb-2">Introdução</h2>
         <p className="text-gray-800 dark:text-gray-100">
           O aplicativo "Fluxo" é um MVP (Produto Mínimo Viável) de uma rede social descentralizada, focada em eventos públicos e privados. Utiliza blockchain para autenticação de usuários e armazenamento descentralizado para garantir privacidade e segurança.
         </p>
-      </NeomorphicCard>
+      </Card>
 
-      <NeomorphicCard className="mb-6">
+      <Card >
         <h2 id="arquitetura-do-sistema" className="text-2xl font-semibold text-primary mb-2">Arquitetura do Sistema</h2>
         <h3 id="componentes-principais" className="text-lg font-semibold text-highlight mb-1">Componentes Principais</h3>
         <ul className="list-disc pl-6 text-gray-700 dark:text-gray-200 mb-4">
@@ -90,9 +87,9 @@ const DocumentationMd: React.FC = () => (
             </code>
           </pre>
         </div>
-      </NeomorphicCard>
+      </Card>
 
-      <NeomorphicCard className="mb-6">
+      <Card >
         <h2 id="modelos-de-dados" className="text-2xl font-semibold text-primary mb-2">Modelos de Dados</h2>
         <h3 id="classe-user" className="text-lg font-semibold text-highlight mb-1">Classe <code>User</code></h3>
         <div className="bg-lightBg dark:bg-darkBg rounded-lg p-4 shadow-neo-inset dark:shadow-neo-inset mb-4">
@@ -141,9 +138,9 @@ const DocumentationMd: React.FC = () => (
             </code>
           </pre>
         </div>
-      </NeomorphicCard>
+      </Card>
 
-      <NeomorphicCard className="mb-6">
+      <Card >
         <h2 id="interface-gráfica-uiux" className="text-2xl font-semibold text-primary mb-2">Interface Gráfica (UI/UX)</h2>
         <h3 id="telas-principais" className="text-lg font-semibold text-highlight mb-1">Telas Principais</h3>
         <ol className="list-decimal pl-6 text-gray-700 dark:text-gray-200">
@@ -180,9 +177,9 @@ const DocumentationMd: React.FC = () => (
             </ul>
           </li>
         </ol>
-      </NeomorphicCard>
+      </Card>
 
-      <NeomorphicCard className="mb-6">
+      <Card >
         <h2 id="tecnologias-e-ferramentas" className="text-2xl font-semibold text-primary mb-2">Tecnologias e Ferramentas</h2>
         <h3 id="frontend-react-native" className="text-lg font-semibold text-highlight mb-1">Frontend (React Native)</h3>
         <ul className="list-disc pl-6 text-gray-700 dark:text-gray-200 mb-2">
@@ -202,9 +199,9 @@ const DocumentationMd: React.FC = () => (
           <li><b>Diagramas</b>: Visual Paradigm Online</li>
           <li><b>CI/CD</b>: GitHub Actions</li>
         </ul>
-      </NeomorphicCard>
+      </Card>
 
-      <NeomorphicCard className="mb-6">
+      <Card >
         <h2 id="guia-de-instalação-e-configuração" className="text-2xl font-semibold text-primary mb-2">Guia de Instalação e Configuração</h2>
         <h3 id="frontend-react-native-1" className="text-lg font-semibold text-highlight mb-1">Frontend (React Native)</h3>
         <ol className="list-decimal pl-6 text-gray-700 dark:text-gray-200 mb-4">
@@ -270,43 +267,43 @@ const DocumentationMd: React.FC = () => (
             Configure <code>appsettings.json</code> com conexão IPFS e blockchain.
           </li>
         </ol>
-      </NeomorphicCard>
+      </Card>
 
-      <NeomorphicCard className="mb-6">
+      <Card >
         <h2 id="estratégia-de-testes" className="text-2xl font-semibold text-primary mb-2">Estratégia de Testes</h2>
         <ul className="list-disc pl-6 text-gray-700 dark:text-gray-200">
           <li><b>Testes Unitários</b>: Backend (.NET) com <code>xUnit</code></li>
           <li><b>Testes de Integração</b>: Frontend (React Native) com <code>React Native Testing Library</code></li>
           <li><b>Testes de Usabilidade</b>: Feedback de usuários beta</li>
         </ul>
-      </NeomorphicCard>
+      </Card>
 
-      <NeomorphicCard className="mb-6">
+      <Card >
         <h2 id="plano-de-deploy" className="text-2xl font-semibold text-primary mb-2">Plano de Deploy</h2>
         <ul className="list-disc pl-6 text-gray-700 dark:text-gray-200">
           <li><b>Frontend</b>: Deploy como web app (GitHub Pages)</li>
           <li><b>Backend</b>: Docker container no AWS EC2 (grátis tier)</li>
           <li><b>Blockchain</b>: Testnet Ethereum (Rinkeby)</li>
         </ul>
-      </NeomorphicCard>
+      </Card>
 
-      <NeomorphicCard className="mb-6">
+      <Card >
         <h2 id="futuras-melhorias" className="text-2xl font-semibold text-primary mb-2">Futuras Melhorias</h2>
         <ul className="list-disc pl-6 text-gray-700 dark:text-gray-200">
           <li>Integração com mais carteiras (ex: Trust Wallet)</li>
           <li>Criptografia end-to-end para comentários</li>
           <li>Sistema de reputação baseado em blockchain</li>
         </ul>
-      </NeomorphicCard>
+      </Card>
 
-      <NeomorphicCard>
+      <Card>
         <h2 id="conclusão" className="text-2xl font-semibold text-primary mb-2">Conclusão</h2>
         <p className="text-gray-800 dark:text-gray-100">
           O projeto "Fluxo" oferece uma solução descentralizada para gerenciamento de eventos, priorizando privacidade e segurança. Esta documentação serve como base para desenvolver o MVP usando ferramentas gratuitas e open-source.
         </p>
-      </NeomorphicCard>
-    </NeomorphicSection>
-  </ContainerNeomorphic>
+      </Card>
+    </div>
+  </div>
 );
 
 export default DocumentationMd;

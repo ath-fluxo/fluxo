@@ -34,12 +34,10 @@ const createRoutes = createBrowserRouter([
       { path: pathRoutes.mvp, element: <Mvp /> },
       { path: pathRoutes.custos, element: <CustosMVP /> },
       { path: pathRoutes.orcamentario, element: <Orcamentario /> },
-      { path: pathRoutes.features, element: <Features /> },  
+      { path: pathRoutes.features, element: <Features /> },
       {path: pathRoutes.roadmap, element: <Roadmap />},
-     
     ],
   },
-  
 ]);
 
 export function Routes() {

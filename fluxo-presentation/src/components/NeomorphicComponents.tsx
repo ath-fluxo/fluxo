@@ -1,6 +1,8 @@
 /** src/components/NeomorphicComponents.tsx **/
 import classNames from 'classnames';
 import React, { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes } from 'react';
+import { Link } from 'react-router-dom';
+import { pathRoutes } from '../routes/pathRoutes';
 import { ThemeToggle } from './ThemeToggle';
 
 /** Container principal com padding e background do tema */
@@ -28,7 +30,7 @@ export const NeomorphicButton: React.FC<NeomorphicButtonProps> = ({
     ...rest
 }) => {
     const bgColor = {
-        primary: 'bg-primary text-white hover:bg-primary/90',
+        primary: 'inset-shadow-sm inset-shadow-purple-500/100 bg-primary text-white hover:bg-primary/90 dark:bg-primary/90 dark:text-white hover:dark:bg-primary',
         secondary: 'bg-secondary text-darkBg hover:bg-secondary/90',
         highlight: 'bg-highlight text-darkBg hover:bg-highlight/90'
     }[variant];
@@ -60,7 +62,7 @@ export interface NeomorphicCardProps extends HTMLAttributes<HTMLDivElement> {
 export const NeomorphicCard: React.FC<NeomorphicCardProps> = ({ children, className = '', ...rest }) => (
     <div
         className={classNames(
-            'bg-lightBg dark:bg-darkBg rounded-xl p-6 shadow-neo dark:shadow-neo',
+            'bg-lightBg dark:bg-darkBg rounded-xl shadow-neo dark:shadow-neo',
             className
         )}
         {...rest}
@@ -121,14 +123,15 @@ export interface NeomorphicNavbarProps {
     links?: { label: string; href: string }[];
     onToggleTheme?: () => void;
 }
-export const NeomorphicNavbar: React.FC<NeomorphicNavbarProps> = ({ logo, title, links = [], onToggleTheme }) => (
-   
+export const NeomorphicNavbar: React.FC<NeomorphicNavbarProps> = ({ logo, title, links = [],  }) => (
     <header className="bg-lightBg dark:bg-darkBg py-3 px-6 shadow-neo dark:shadow-neo">
         <nav className="max-w-7xl mx-auto flex items-center justify-between">
+            <Link to={pathRoutes.home}>
             <div className="flex items-center space-x-3">
                 {logo}
                 {title && <span className="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</span>}
             </div>
+            </Link>
             <ul className="hidden md:flex space-x-6">
                 {links.map(link => (
                     <li key={link.href}>
@@ -142,12 +145,6 @@ export const NeomorphicNavbar: React.FC<NeomorphicNavbarProps> = ({ logo, title,
                 ))}
                 <li>
                     <ThemeToggle></ThemeToggle>
-                    {/* <button
-                        onClick={onToggleTheme}
-                        className="p-2 rounded-full bg-lightBg dark:bg-darkBg shadow-neo dark:shadow-neo"
-                    >
-                        🌓
-                    </button> */}
                 </li>
             </ul>
             <div className="md:hidden">

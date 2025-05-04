@@ -3,7 +3,7 @@ import { ContainerNeomorphic, NeomorphicButton, NeomorphicCard } from '../../com
 
 const DocumentationPage: React.FC = () => {
     return (
-        <ContainerNeomorphic className="p-8 space-y-8">
+        <ContainerNeomorphic className=" space-y-2">
             <NeomorphicCard>
                 <h1 className="text-primary text-3xl font-bold mb-6">Documentação Completa do Projeto "Fluxo"</h1>
                 <h2 id="sumário" className="text-primary text-2xl font-bold mb-4">Sumário</h2>

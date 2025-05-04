@@ -1,7 +1,7 @@
 @import "tailwindcss";
-@tailwind components;
+/* @import "tailwindcss/preflight"; */
+@custom-variant dark (&:where(.dark, .dark *));
 @tailwind utilities;
-@tailwind base;
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

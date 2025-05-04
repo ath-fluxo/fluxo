@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { ContainerNeomorphic, NeomorphicButton, NeomorphicFooter, NeomorphicNavbar } from '../components/NeomorphicComponents';
-import {ThemeToggle} from '../components/ThemeToggle';
 import { pathRoutes } from '../routes/pathRoutes';
 import { Body } from './Body';
 // import { Header } from './header';
@@ -98,7 +97,6 @@ export function RootLayout() {
 
   return (
     <div className="min-h-screen p-4 bg-gray-100 dark:bg-gray-900">
-      <div className="flex items-center justify-between mb-2">
  <NeomorphicNavbar
         title="Fluxo Docs"
         
@@ -109,24 +107,29 @@ export function RootLayout() {
         { label: "Tecnologias", href: "#tecnologias-e-ferramentas" },
       ]}
     />
-        <Link to="/docs">
-          <h1 className="text-3xl font-bold">Fluxo Docs</h1>
-        </Link>
-        <ThemeToggle />
-      </div>
-      <div className="flex space-x-2">
+      <div className="flex w-dvw h-full">
         {/* Sidebar */}
-        <div className="w-60 flex-shrink-0">
+        <div className="w-50 flex-shrink-0">
           <ContainerNeomorphic>
-            <nav className="space-y-2"
-            style={{ display: 'flex', flexDirection: 'column', gap: '0.02rem' }
-            } 
-            >
+            <nav className="space-y-2 nav-styles gap-0.5 flex flex-col">
               {navItems.map(({ path, label }) => (
                 <Link key={path} to={path}>
                   <NeomorphicButton
                     className={pathname == path ? 'bg-blue-400 dark:bg-blue-600' : ''}
-                  // Add a class to highlight the active link
+                    // Add a class to highlight the active link
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      padding: '0.5rem 1rem',
+                      textAlign: 'center',
+                      textDecoration: 'none',
+                      color: '#000',
+                      fontSize: '1rem',
+                      fontWeight: 'bold',
+                      borderRadius: '0.5rem',
+                      backgroundColor: pathname == path ? '#491CA1FF' : '#B6ACCEC5',
+                    }}
                   >
                     {label}
                   </NeomorphicButton>
@@ -137,7 +140,7 @@ export function RootLayout() {
         </div>
 
         {/* Content */}
-        <div className="flex-2">
+        <div className="w-max">
           <ContainerNeomorphic>
             <Body>
               <Outlet />
