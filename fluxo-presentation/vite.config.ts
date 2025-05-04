@@ -1,40 +1,26 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 import { defineConfig } from 'vite';
 import vitePluginString from 'vite-plugin-string';
-// https://vite.dev/config/
+
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    // Vite plugin to handle .md files
-    {
-      name: 'vite-plugin-md',
-      transform(code, id) {
-        if (id.endsWith('.md')) {
-          return {
-            code: `export default ${JSON.stringify(code)}`,
-            map: null,
-          }
-        }
-      },
-    },
-    // Vite plugin to handle .md files as strings
-    {
-      name: 'markdown-loader',
-      transform(code, id) {
-        if (id.slice(-3) === '.md') {
-          return `export default ${JSON.stringify(code)};`;
-        }
-      },
-    },
     vitePluginString({
       include: '**/*.md',
       exclude: ['**/node_modules/**'],
     }),
   ],
+  assetsInclude: ['**/*.md', '**/*.svg', '**/*.png'],
+  publicDir: 'public',
   server: {
     port: 3000,
+    open: true,
+  },
+  preview: {
+    port: 5000,
     open: true,
   },
   build: {
@@ -47,17 +33,21 @@ export default defineConfig({
         assetFileNames: '[name].[ext]',
       },
     },
+    target: 'esnext', // modern output for faster builds
   },
   resolve: {
     alias: {
-      '@': '/src',
-      '@components': '/src/components',
-      '@hooks': '/src/hooks',
-      '@context': '/src/context',
-      '@styles': '/src/styles',
-      '@utils': '/src/utils',
-      '@assets': '/src/assets',
-      '@docs': './../docs',
+      '@': path.resolve(__dirname, 'src'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@layouts': path.resolve(__dirname, 'src/layouts'),
+      '@routes': path.resolve(__dirname, 'src/routes'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@context': path.resolve(__dirname, 'src/context'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@docs': path.resolve(__dirname, '../docs'),
     },
   },
   css: {
@@ -67,20 +57,16 @@ export default defineConfig({
       },
     },
   },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'react-markdown'],
+  esbuild: {
+    target: 'esnext',
+    jsx: 'automatic',
+    jsxFactory: 'React.createElement',
+    jsxFragment: 'React.Fragment',
   },
   define: {
     'process.env': {
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      VITE_APP_TITLE: JSON.stringify(process.env.VITE_APP_TITLE),
+      VITE_APP_TITLE: JSON.stringify(process.env.VITE_APP_TITLE || ''),
     },
   },
-  preview: {
-    port: 5000,
-    open: true,
-  },
-  assetsInclude: ['**/*.md'],
-  publicDir: 'public',
-  
-})
+});

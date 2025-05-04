@@ -1,6 +1,7 @@
-import { useTheme } from '../context/ThemeContext';
+import { LightBulbIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import { useTheme } from '../context/useTheme';
 
-const ThemeToggle: React.FC = () => {
+export const ThemeToggle = () => {
     const { theme, setTheme } = useTheme();
 
     const toggleTheme = () => {
@@ -8,10 +9,10 @@ const ThemeToggle: React.FC = () => {
     };
 
     return (
-        <button onClick={toggleTheme}>
-            {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        <button type="button" className="p-2 rounded-full bg-lightBg dark:bg-darkBg shadow-neo dark:shadow-neo"
+            onClick={toggleTheme}>
+            
+            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
         </button>
     );
 };
-
-export default ThemeToggle;

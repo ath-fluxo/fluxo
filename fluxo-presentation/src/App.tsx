@@ -1,10 +1,9 @@
-import './App.css'
-import { DocsRoutes } from './DocsRoutes'
+import { Routes } from './routes/index.routes';
 
 function App() {
 
   return (
-      <DocsRoutes />
+    <Routes />
   )
 }
 

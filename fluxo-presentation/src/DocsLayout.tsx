@@ -1,21 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
     ContainerNeomorphic,
     NeomorphicButton
 } from './components/NeomorphicComponents';
 import ThemeToggle from './components/ThemeToggle';
-import { useTheme } from './context/ThemeContext';
+import { useTheme } from './context/useTheme';
 
 /**
  * Layout neomórfico para todo o site de documentação Fluxo
  */
 export const DocsLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const { theme } = useTheme();
+    const { theme, } = useTheme();
+
     React.useEffect(() => {
         document.documentElement.classList.toggle('dark', theme === 'dark');
     }, [theme]);
-    // const { pathname } = useLocation();
+
+    const { pathname } = useLocation();
 
     // Lista de rotas para navegação
     const navItems = [
@@ -35,7 +37,7 @@ export const DocsLayout: React.FC<{ children: React.ReactNode }> = ({ children }
     return (
         <div className="min-h-screen p-8 bg-gray-100 dark:bg-gray-900">
             {/* Header */}
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-2">
                 <Link to="/docs">
                     <h1 className="text-3xl font-bold">Fluxo Docs</h1>
                 </Link>
@@ -50,9 +52,11 @@ export const DocsLayout: React.FC<{ children: React.ReactNode }> = ({ children }
                             {navItems.map(({ path, label }) => (
                                 <Link key={path} to={path}>
                                     <NeomorphicButton
-                                        label={label}
-                                        className={ 'bg-blue-400 dark:bg-blue-600'}
-                                    />
+                                        className={pathname == path ?  'bg-blue-400 dark:bg-blue-600' : ''}
+                                    // Add a class to highlight the active link
+                                    >
+                                        {label}
+                                    </NeomorphicButton>
                                 </Link>
                             ))}
                         </nav>

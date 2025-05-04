@@ -1,97 +1,186 @@
-import React from 'react';
-import { useTheme } from '../context/ThemeContext';
+/** src/components/NeomorphicComponents.tsx **/
+import classNames from 'classnames';
+import React, { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes } from 'react';
+import { ThemeToggle } from './ThemeToggle';
 
-/**
- * NeomorphicComponents.tsx
- * Biblioteca de componentes neomórficos para o site do Fluxo.
- * Usa Tailwind CSS com utilitários customizados para sombras e cores dinâmicas.
- */
-
-// Tipagem para props comuns
-interface ChildrenProps {
+/** Container principal com padding e background do tema */
+export interface ContainerNeomorphicProps {
     children: React.ReactNode;
+    className?: string;
 }
+export const ContainerNeomorphic: React.FC<ContainerNeomorphicProps> = ({ children, className = '' }) => (
+    <div className={classNames('min-h-screen p-8 bg-lightBg dark:bg-darkBg', className)}>
+        {children}
+    </div>
+);
 
-/**
- * ContainerNeomorphic: wrapper principal com estilo neomórfico.
- */
-export const ContainerNeomorphic: React.FC<ChildrenProps> = ({ children }) => {
-    const { theme } = useTheme();
-    const isDark = theme === 'dark';
-
-    return (
-        <div
-            className={`rounded-2xl p-6 bg-gray-100 dark:bg-gray-800 ${isDark ? 'shadow-neu-dark' : 'shadow-neu-light'
-                }`}
-        >
-            {children}
-        </div>
-    );
-};
-
-/**
- * NeomorphicCard: bloco de conteúdo com padding e espaçamento.
- */
-export const NeomorphicCard: React.FC<ChildrenProps> = ({ children }) => {
-    const { theme } = useTheme();
-    const isDark = theme === 'dark';
-
-    return (
-        <div
-            className={`rounded-xl p-4 bg-gray-100 dark:bg-gray-800 ${isDark ? 'shadow-neu-dark' : 'shadow-neu-light'
-                } hover:${isDark ? 'shadow-neu-inset-dark' : 'shadow-neu-inset-light'} transition-shadow`}
-        >
-            {children}
-        </div>
-    );
-};
-
-/**
- * NeomorphicButton: botão com relevo e estado pressionado.
- */
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    label: string;
+/** Botão neomórfico com variantes de cor e tamanho */
+export interface NeomorphicButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    variant?: 'primary' | 'secondary' | 'highlight';
+    size?: 'sm' | 'md' | 'lg';
+    className?: string;
 }
-export const NeomorphicButton: React.FC<ButtonProps> = ({ label, ...rest }) => {
-    const { theme } = useTheme();
-    const isDark = theme === 'dark';
-
+export const NeomorphicButton: React.FC<NeomorphicButtonProps> = ({
+    variant = 'primary',
+    size = 'md',
+    className = '',
+    children,
+    ...rest
+}) => {
+    const bgColor = {
+        primary: 'bg-primary text-white hover:bg-primary/90',
+        secondary: 'bg-secondary text-darkBg hover:bg-secondary/90',
+        highlight: 'bg-highlight text-darkBg hover:bg-highlight/90'
+    }[variant];
+    const sizeClass = {
+        sm: 'py-1 px-2 text-sm',
+        md: 'py-2 px-4 text-base',
+        lg: 'py-3 px-6 text-lg'
+    }[size];
     return (
         <button
+            type="button"
+            className={classNames(
+                bgColor,
+                sizeClass,
+                'font-medium rounded-lg shadow-neo dark:shadow-neo active:shadow-neo-inset transition-all',
+                className
+            )}
             {...rest}
-            className={`rounded-lg px-5 py-2 font-medium bg-gray-100 dark:bg-gray-800 ${isDark ? 'shadow-neu-dark' : 'shadow-neu-light'
-                } active:${isDark ? 'shadow-neu-inset-dark' : 'shadow-neu-inset-light'} transition-shadow focus:outline-none`}
         >
-            {label}
+            {children}
         </button>
     );
 };
 
-/**
- * NeomorphicInput: campo de texto com estilo neomórfico.
- */
-export const NeomorphicInput: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = (props) => {
-    const { theme } = useTheme();
-    const isDark = theme === 'dark';
+/** Card neomórfico para agrupar conteúdo */
+export interface NeomorphicCardProps extends HTMLAttributes<HTMLDivElement> {
+    children: React.ReactNode;
+}
+export const NeomorphicCard: React.FC<NeomorphicCardProps> = ({ children, className = '', ...rest }) => (
+    <div
+        className={classNames(
+            'bg-lightBg dark:bg-darkBg rounded-xl p-6 shadow-neo dark:shadow-neo',
+            className
+        )}
+        {...rest}
+    >
+        {children}
+    </div>
+);
 
-    return (
-        <input
-            {...props}
-            className={`w-full rounded-lg p-3 bg-gray-100 dark:bg-gray-800 ${isDark ? 'shadow-neu-dark' : 'shadow-neu-light'
-                } focus:${isDark ? 'shadow-neu-inset-dark' : 'shadow-neu-inset-light'} transition-shadow focus:outline-none`}
-        />
+/** Tile neomórfico para ícones/atalhos */
+export interface NeomorphicTileProps extends HTMLAttributes<HTMLDivElement> {
+    icon?: React.ReactNode;
+    label?: string;
+    href?: string;
+}
+export const NeomorphicTile: React.FC<NeomorphicTileProps> = ({ icon, label, href, className = '', ...rest }) => {
+    const content = (
+        <div
+            className={classNames(
+                'flex flex-col items-center justify-center bg-lightBg dark:bg-darkBg rounded-lg p-4 shadow-neo hover:shadow-neo-inset transition',
+                className
+            )}
+            {...rest}
+        >
+            {icon && <div className="text-3xl mb-2">{icon}</div>}
+            {label && <div className="text-sm font-medium text-gray-800 dark:text-gray-200">{label}</div>}
+        </div>
     );
+    return href ? <a href={href} className="no-underline hover:underline">{content}</a> : content;
 };
 
-/**
- * Usage Example:
- *
- * <ContainerNeomorphic>
- *   <h2 className="text-xl mb-4">Documentação Fluxo</h2>
- *   <NeomorphicCard>
- *     <p>Conteúdo do card...</p>
- *     <NeomorphicInput placeholder="Pesquisar..." />
- *     <NeomorphicButton label="Enviar" />
- *   </NeomorphicCard>
- * </ContainerNeomorphic>
- */
+/** Campo de texto neomórfico (entalhado) */
+export interface NeomorphicTextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
+    label?: string;
+    icon?: React.ReactNode;
+    className?: string;
+}
+export const NeomorphicTextField: React.FC<NeomorphicTextFieldProps> = ({ label, icon, className = '', ...rest }) => (
+    <div className={classNames('flex flex-col mb-4', className)}>
+        {label && <label className="mb-2 text-gray-700 dark:text-gray-300">{label}</label>}
+        <div className="relative">
+            <input
+                className="w-full bg-lightBg dark:bg-darkBg shadow-neo-inset dark:shadow-neo-inset rounded-lg py-2 px-4 pr-10 text-gray-800 dark:text-gray-100 placeholder-gray-500 focus:outline-none"
+                {...rest}
+            />
+            {icon && (
+                <span className="absolute inset-y-0 right-3 flex items-center text-gray-600 dark:text-gray-400">
+                    {icon}
+                </span>
+            )}
+        </div>
+    </div>
+);
+
+/** Navbar neomórfica com logo, título e links */
+export interface NeomorphicNavbarProps {
+    logo?: React.ReactNode;
+    title?: string;
+    links?: { label: string; href: string }[];
+    onToggleTheme?: () => void;
+}
+export const NeomorphicNavbar: React.FC<NeomorphicNavbarProps> = ({ logo, title, links = [], onToggleTheme }) => (
+   
+    <header className="bg-lightBg dark:bg-darkBg py-3 px-6 shadow-neo dark:shadow-neo">
+        <nav className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+                {logo}
+                {title && <span className="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</span>}
+            </div>
+            <ul className="hidden md:flex space-x-6">
+                {links.map(link => (
+                    <li key={link.href}>
+                        <a
+                            href={link.href}
+                            className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary"
+                        >
+                            {link.label}
+                        </a>
+                    </li>
+                ))}
+                <li>
+                    <ThemeToggle></ThemeToggle>
+                    {/* <button
+                        onClick={onToggleTheme}
+                        className="p-2 rounded-full bg-lightBg dark:bg-darkBg shadow-neo dark:shadow-neo"
+                    >
+                        🌓
+                    </button> */}
+                </li>
+            </ul>
+            <div className="md:hidden">
+                {/* TODO: implementar menu mobile */}
+            </div>
+        </nav>
+    </header>
+);
+
+/** Footer neomórfico com sombra interna */
+export interface NeomorphicFooterProps {
+    children?: React.ReactNode;
+}
+export const NeomorphicFooter: React.FC<NeomorphicFooterProps> = ({ children }) => (
+    <footer className="bg-lightBg dark:bg-darkBg py-4 px-6 shadow-neo-inset dark:shadow-neo-inset text-center text-sm text-gray-600 dark:text-gray-400">
+        {children || '© 2025 Fluxo - Documentação. Todos os direitos reservados.'}
+    </footer>
+);
+
+/** Seção neomórfica ampla para agrupar conteúdo */
+export interface NeomorphicSectionProps {
+    children: React.ReactNode;
+    className?: string;
+}
+export const NeomorphicSection: React.FC<NeomorphicSectionProps> = ({ children, className = '' }) => (
+    <section
+        className={classNames(
+            'bg-lightBg dark:bg-darkBg rounded-2xl p-8 mb-8 shadow-neo dark:shadow-neo',
+            className
+        )}
+    >
+        {children}
+    </section>
+);
+
+/** Fim de src/components/NeomorphicComponents.tsx */

@@ -1,12 +1,13 @@
 @import "tailwindcss";
-
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind base;
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  width: 100%;
+  height: 100%;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -21,34 +22,36 @@
 
 @layer utilities {
   .shadow-neu-light {
-    box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+    box-shadow: 8px 8px 16px #310C48FF, -8px -8px 16px #B4EDD4FF;
   }
   .shadow-neu-dark {
-    box-shadow: 8px 8px 16px #222222, -8px -8px 16px #2a2a2a;
+    box-shadow: 8px 8px 16px #13031DCA, -8px -8px 16px #1D0D4199;
   }
   .shadow-neu-inset-light {
-    box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff;
+    box-shadow: inset 8px 8px 16px #28033FFF, inset -8px -8px 16px #B4EDD4FF;
   }
   .shadow-neu-inset-dark {
-    box-shadow: inset 8px 8px 16px #222222, inset -8px -8px 16px #2a2a2a;
+    box-shadow: inset 8px 8px 16px #07000BFF, inset -8px -8px 16px #19362BFF;
   }
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
+  /* font-weight: 500; */
+  color: #B4EDD4FF;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #EBE7E2FF;
 }
 
 body {
-  margin: 0;
+  padding: 40;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  place-content: center;
+  flex-direction: column;
+  /* min-width: 320px; */
+  /* min-height: 100vh; */
 }
 
 h1 {
@@ -87,3 +90,6 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+
