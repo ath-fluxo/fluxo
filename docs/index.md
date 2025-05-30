@@ -1,5 +1,4 @@
 
-![image](./../assets/logo1.png)
 # 📘 Documentação Oficial do Fluxo
 
 Bem-vindo à central de documentação do **Fluxo**, o aplicativo de eventos com mapa interativo, fórum de eventos e identidade descentralizada via blockchain.
@@ -33,7 +32,6 @@ Fluxo é uma rede social federada e geolocalizada para eventos, com base em:
 
 ---
 
-![image](./../assets/logo2.png)
 
 ---
 **Para sugestões ou contribuição**, abra uma [Issue](https://github.com/AmoreiraT/fluxo/issues) ou envie um Pull Request.
