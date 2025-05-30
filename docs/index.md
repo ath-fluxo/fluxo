@@ -36,4 +36,3 @@ Fluxo é uma rede social federada e geolocalizada para eventos, com base em:
 ---
 **Para sugestões ou contribuição**, abra uma [Issue](https://github.com/AmoreiraT/fluxo/issues) ou envie um Pull Request.
 
-![image](./../assets/logo3.png)
