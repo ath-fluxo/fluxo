@@ -1,7 +1,7 @@
 
 # 🌐 Fluxo – Onde está o fluxo?
 
-Fluxo é uma plataforma social geolocalizada que conecta pessoas a eventos públicos e privados através de um mapa interativo e fóruns comunitários. Inspirado nos antigos eventos do Facebook, mas com uma pegada descentralizada, moderna e segura. O objetivo é promover a **ocupação urbana**, a **liberdade digital** e a **privacidade do usuário**.
+Fluxo é uma plataforma social geolocalizada que conecta pessoas a eventos públicos e privados através de um mapa interativo e fóruns comunitários. Inspirado nos antigos eventos do Facebook, mas com uma pegada descentralizada, moderna e segura. O objetivo é promover a **interações reais**, a **liberdade digital** e a **privacidade do usuário**.
 
 ---
 
