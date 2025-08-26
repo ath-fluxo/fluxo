@@ -96,17 +96,17 @@ export function RootLayout() {
   }, []);
 
   return (
-    <div className="min-h-screen p-4 bg-gray-100 dark:bg-gray-900">
- <NeomorphicNavbar
+    <div className="min-h-screen p-2 bg-gray-100 dark:bg-gray-900">
+      <NeomorphicNavbar
         title="Fluxo Docs"
-        
-      links={[
-        { label: "Sumário", href: "#sumário" },
-        { label: "Modelos", href: "#modelos-de-dados" },
-        { label: "UI/UX", href: "#interface-gráfica-uiux" },
-        { label: "Tecnologias", href: "#tecnologias-e-ferramentas" },
-      ]}
-    />
+
+        links={[
+          { label: "Sumário", href: "#sumário" },
+          { label: "Modelos", href: "#modelos-de-dados" },
+          { label: "UI/UX", href: "#interface-gráfica-uiux" },
+          { label: "Tecnologias", href: "#tecnologias-e-ferramentas" },
+        ]}
+      />
       <div className="flex w-dvw h-full">
         {/* Sidebar */}
         <div className="w-50 flex-shrink-0">
@@ -149,7 +149,7 @@ export function RootLayout() {
         </div>
       </div>
 
-    <NeomorphicFooter />
+      <NeomorphicFooter />
 
     </div>
   );

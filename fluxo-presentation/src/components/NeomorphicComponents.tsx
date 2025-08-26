@@ -123,14 +123,14 @@ export interface NeomorphicNavbarProps {
     links?: { label: string; href: string }[];
     onToggleTheme?: () => void;
 }
-export const NeomorphicNavbar: React.FC<NeomorphicNavbarProps> = ({ logo, title, links = [],  }) => (
+export const NeomorphicNavbar: React.FC<NeomorphicNavbarProps> = ({ logo, title, links = [], }) => (
     <header className="bg-lightBg dark:bg-darkBg py-3 px-6 shadow-neo dark:shadow-neo">
         <nav className="max-w-7xl mx-auto flex items-center justify-between">
             <Link to={pathRoutes.home}>
-            <div className="flex items-center space-x-3">
-                {logo}
-                {title && <span className="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</span>}
-            </div>
+                <div className="flex items-center space-x-3">
+                    {logo}
+                    {title && <span className="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</span>}
+                </div>
             </Link>
             <ul className="hidden md:flex space-x-6">
                 {links.map(link => (
